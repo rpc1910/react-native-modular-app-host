@@ -30,3 +30,4 @@ Conjunto de rotas da funcionalidade da home
 - [ ] Estrutura para configuração do Redux
 - [ ] Fluxo para app com autenticação
 - [ ] Configuração multi flavor/targets
+- [ ] Testar pipeline para forçar sempre as últimas versões dos módulos
