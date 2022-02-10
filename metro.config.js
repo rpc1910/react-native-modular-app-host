@@ -4,6 +4,12 @@
  *
  * @format
  */
+const getLocalModuleConfig = require('./utils/get-local-module-config');
+const path = require('path');
+
+const modulesPaths = getLocalModuleConfig();
+
+// https://github.com/facebook/metro/issues/7
 
 module.exports = {
   transformer: {
@@ -14,4 +20,11 @@ module.exports = {
       },
     }),
   },
+  resolver: {
+    extraNodeModules: {
+      ...modulesPaths,
+    },
+    nodeModulesPaths: [path.resolve('.', 'node_modules')],
+  },
+  watchFolders: [...Object.values(modulesPaths)],
 };
